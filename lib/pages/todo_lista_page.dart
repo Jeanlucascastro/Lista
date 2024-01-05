@@ -15,8 +15,19 @@ class TodoListPage extends StatelessWidget {
               labelText: 'E-mail',
               hintText: 'exemplo@gmail.corm',
               border: OutlineInputBorder(),
+              prefixText: 'R\$ ',
+              suffixText: 'cm',
+              labelStyle: TextStyle(
+                fontSize: 20,
+                color: Colors.green
+              )
             ),
             obscureText: false,
+            keyboardType: TextInputType.datetime,
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.green
+            ),
           ),
         ),
       )
