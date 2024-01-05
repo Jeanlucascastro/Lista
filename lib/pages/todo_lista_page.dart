@@ -2,62 +2,62 @@ import 'package:flutter/material.dart';
 
 
 class TodoListPage extends StatelessWidget {
-  TodoListPage({super.key});
-
-  final TextEditingController emailController = TextEditingController();
+  const TodoListPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Adicione uma tarefa'
+                    ),
+                  ),
+                ),
+
+                SizedBox(width: 8),
+                ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xff00d7f3),
+                    padding: EdgeInsets.all(16)
+                  ),
+                    child: Icon(
+                      Icons.add,
+                      size: 30,
+                    ),
+                )
+              ],
+            ),
+            SizedBox(height: 16,),
+            Row(
             children: [
-              TextField(
-                controller: emailController,
-                decoration: InputDecoration(
-                  labelText: 'E-mail',
-                  hintText: 'exemplo@gmail.corm',
-                  border: OutlineInputBorder(),
-                  prefixText: 'R\$ ',
-                  suffixText: 'cm',
-                  labelStyle: TextStyle(
-                    fontSize: 20,
-                    color: Colors.green
-                  )
-                ),
-                obscureText: false,
-                keyboardType: TextInputType.datetime,
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.green
-                ),
-                onChanged: onChanged,
-                onSubmitted: onSubmitted,
+              Expanded(
+                  child: Text('Voce possui 0 tarefas')
               ),
-              ElevatedButton(onPressed: login, child: Text('entrar'))
+              SizedBox(width: 8),
+              ElevatedButton(onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xff00d7f3),
+                      padding: EdgeInsets.all(16)
+                  ),
+                  child: Text('Limpar tudo')
+              )
             ],
-          ),
+            )
+          ],
         ),
-      )
+      ),
+      ),
     );
-  }
-
-  void login() {
-    String text = emailController.text;
-    print(text);
-    emailController.clear();
-    emailController.text = 'entrar';
-    print(text);
-  }
-
-  void onChanged(String text) {
-  // print(text);
-  }
-
-  void onSubmitted(String text) {
-    print(text);
   }
 }
