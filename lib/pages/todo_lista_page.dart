@@ -35,6 +35,7 @@ class TodoListPage extends StatelessWidget {
                   color: Colors.green
                 ),
                 onChanged: onChanged,
+                onSubmitted: onSubmitted,
               ),
               ElevatedButton(onPressed: login, child: Text('entrar'))
             ],
@@ -53,6 +54,10 @@ class TodoListPage extends StatelessWidget {
   }
 
   void onChanged(String text) {
-  print(text);
+  // print(text);
+  }
+
+  void onSubmitted(String text) {
+    print(text);
   }
 }
