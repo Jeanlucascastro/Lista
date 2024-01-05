@@ -34,6 +34,7 @@ class TodoListPage extends StatelessWidget {
                   fontSize: 20,
                   color: Colors.green
                 ),
+                onChanged: onChanged,
               ),
               ElevatedButton(onPressed: login, child: Text('entrar'))
             ],
@@ -49,7 +50,9 @@ class TodoListPage extends StatelessWidget {
     emailController.clear();
     emailController.text = 'entrar';
     print(text);
+  }
 
-
+  void onChanged(String text) {
+  print(text);
   }
 }
