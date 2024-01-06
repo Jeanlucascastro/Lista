@@ -29,13 +29,20 @@ class TodoListPage extends StatelessWidget {
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xff00d7f3),
-                    padding: EdgeInsets.all(16)
+                    padding: EdgeInsets.all(16) 
                   ),
                     child: Icon(
                       Icons.add,
                       size: 30,
                     ),
                 )
+              ],
+            ),
+            SizedBox(height: 16,),
+            ListView(
+              shrinkWrap: true,
+              children: [
+                
               ],
             ),
             SizedBox(height: 16,),
