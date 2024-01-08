@@ -55,19 +55,21 @@ class _TodoListPageState extends State<TodoListPage> {
               ],
             ),
             SizedBox(height: 16,),
-            ListView(
-              shrinkWrap: true,
-              children: [
-                for(String todo in todos)
-                  ListTile(
-                    title: Text(todo),
-                    subtitle: Text('ola'),
-                    leading: Icon(Icons.save, size: 30,),
-                    onTap: () {
-                      print('tarefa: $todo');
-                    },
-                  ),
-              ],
+            Flexible(
+              child: ListView(
+                shrinkWrap: true,
+                children: [
+                  for(String todo in todos)
+                    ListTile(
+                      title: Text(todo),
+                      subtitle: Text('ola'),
+                      leading: Icon(Icons.save, size: 30,),
+                      onTap: () {
+                        print('tarefa: $todo');
+                      },
+                    ),
+                ],
+              ),
             ),
             SizedBox(height: 16,),
             Row(
